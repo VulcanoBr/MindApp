@@ -1,0 +1,17 @@
+<h1>New Content</h1>
+
+<%= form_with (model: @content, local:true) do |form| %>
+    <div class='field'>
+        <%= label.field :title %>
+        <%= form.text_field :title %>
+    </div>
+
+    <div class='field'>
+        <%= label.field :description %>
+        <%= form.text_area :description %>
+    </div>
+
+    <div class='action'>
+        <%= form.submit %>
+    </div>
+<% end %>
