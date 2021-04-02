@@ -4,6 +4,17 @@
 
 <h1>Contents</h1>
 
+<%= form_tag (contents_path, method: :get) do %>
+    <div class='field'>
+        <%= label_tag :tags %>
+        <%= select_tag 'tags[]', option_for_select(current.user.tags.pluck(:name), params[:tags]), { class: 'select2', multiple: 'multiple', style : 'width: 50%' } %>
+    </div>]
+
+    <div class='action'>
+        <%= submit_tag('Search') %>
+    </div>
+<% end %>
+
 <%= @contents.each do |content| %>
     <%= link_to 'Show', contet_path(content) %>
     <%= link_to 'Edit', edit_contet_path(content) %>
