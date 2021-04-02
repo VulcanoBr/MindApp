@@ -10,6 +10,10 @@ class ContentsController < ApplicationController
         @content = Content.new
     end
 
+    def show
+        @content = Content.find(params[:id])
+    end     
+
     def edit
         @content = Content.find(params[:id])
     end
@@ -22,6 +26,16 @@ class ContentsController < ApplicationController
             render 'new'
         end
     end
+
+    def update
+        @content = content.find(params[:id])
+        if @content.update(content_params)
+          redirect_to content_path, notce: "content was successfully updated"
+        else
+          render 'edit'
+        end
+    end
+    
 
     private
 
