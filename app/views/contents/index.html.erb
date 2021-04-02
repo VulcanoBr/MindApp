@@ -9,6 +9,7 @@
     Description: <%= content.description %>
     <%= link_to 'Show', contet_path(content) %>
     <%= link_to 'Edit', edit_contet_path(content) %>
+    <%= link_to 'Delete', content_path(content), method: :delete, data: { confirm: 'Tem cwerteza que deseja excluir ?'} %>
     <BR>
     
 <% end %>
